@@ -95,6 +95,7 @@ public class Resources {
 	[Embed(source='cursors/videoCursor.svg')] private static const videoCursor:Class;
 
 	// Top bar
+	[Embed(source='UI/topbar/opensprites.png')] private static const opensprites:Class;
 	[Embed(source='UI/topbar/scratchlogoOff.png')] private static const scratchlogoOff:Class;
 	[Embed(source='UI/topbar/scratchlogoOn.png')] private static const scratchlogoOn:Class;
 	[Embed(source='UI/topbar/scratchx-logo.png')] private static const scratchxlogo:Class;

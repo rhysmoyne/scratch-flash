@@ -71,21 +71,21 @@ public class TopBarPart extends UIPart {
 		languageButton.isMomentary = true;
 		addTextButtons();
 		addToolButtons();
-		if (Scratch.app.isExtensionDevMode) {
-			addChild(logoButton = new IconButton(app.logoButtonPressed, Resources.createBmp('scratchxlogo')));
+		//if (Scratch.app.isExtensionDevMode) {
+			addChild(logoButton = new IconButton(app.logoButtonPressed, Resources.createBmp('opensprites')));
 			const desiredButtonHeight:Number = 20;
 			logoButton.scaleX = logoButton.scaleY = 1;
 			var scale:Number = desiredButtonHeight / logoButton.height;
 			logoButton.scaleX = logoButton.scaleY = scale;
 
 			addChild(exportButton = new Button('Save Project', function():void { app.exportProjectToFile(); }));
-			addChild(extensionLabel = makeLabel('My Extension', offlineNoticeFormat, 2, 2));
+		//	addChild(extensionLabel = makeLabel('My Extension', offlineNoticeFormat, 2, 2));
 
-			var extensionDevManager:ExtensionDevManager = Scratch.app.extensionManager as ExtensionDevManager;
-			if (extensionDevManager) {
-				addChild(loadExperimentalButton = extensionDevManager.makeLoadExperimentalExtensionButton());
-			}
-		}
+		//	var extensionDevManager:ExtensionDevManager = Scratch.app.extensionManager as ExtensionDevManager;
+		//	if (extensionDevManager) {
+		//		addChild(loadExperimentalButton = extensionDevManager.makeLoadExperimentalExtensionButton());
+		//	}
+		//}
 	}
 
 	public static function strings():Array {

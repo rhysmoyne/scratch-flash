@@ -11,3 +11,7 @@
 .flexLibProperties
 .project
 local.properties
+apache-flex-sdk-4.15.0-bin/
+index.html
+.c9/
+locale/

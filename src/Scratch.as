@@ -1050,6 +1050,9 @@ public class Scratch extends Sprite {
 		}
 		externalCall('JSlogoButtonPressed', null, null);
 	}
+	public function closeEditorExternal():void {
+		externalCall('JSlogoButtonPressed', null, null);
+	}
 
 	// -----------------------------
 	// Translations utilities

@@ -57,6 +57,7 @@ public class TopBarPart extends UIPart {
 
 	protected var loadExperimentalButton:Button;
 	protected var exportButton:Button;
+	protected var closeButtonTopBar:Button;
 	protected var extensionLabel:TextField;
 
 	public function TopBarPart(app:Scratch) {
@@ -79,6 +80,7 @@ public class TopBarPart extends UIPart {
 			logoButton.scaleX = logoButton.scaleY = scale;
 
 			addChild(exportButton = new Button('Save Project', function():void { app.exportProjectToFile(); }));
+			addChild(closeButtonTopBar = new Button('Close Editor', function():void { app.closeEditorExternal(); }));
 		//	addChild(extensionLabel = makeLabel('My Extension', offlineNoticeFormat, 2, 2));
 
 		//	var extensionDevManager:ExtensionDevManager = Scratch.app.extensionManager as ExtensionDevManager;

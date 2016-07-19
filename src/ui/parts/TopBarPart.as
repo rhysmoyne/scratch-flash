@@ -174,6 +174,12 @@ public class TopBarPart extends UIPart {
 			loadExperimentalButton.y = h + 5;
 			// Don't upload nextX: we overlap with other items. At most one set should show at a time.
 		}
+		
+		if(closeButtonTopBar) {
+			closeButtonTopBar.x = nextX - closeButtonTopBar.width;
+			closeButtonTopBar.y = h + 5;
+			nextX = closeButtonTopBar.x - 5;
+		}
 
 		if (exportButton) {
 			exportButton.x = nextX - exportButton.width;

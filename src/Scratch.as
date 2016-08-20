@@ -279,6 +279,7 @@ public class Scratch extends Sprite {
 
 	protected function jsEditorReady():void {
 		if (jsEnabled) {
+                        loadProjectUrl(loaderInfo.parameters['project']);
 			externalCall('JSeditorReady', function (success:Boolean):void {
 				if (!success) jsThrowError('Calling JSeditorReady() failed.');
 			});
@@ -422,7 +423,7 @@ public class Scratch extends Sprite {
 
 	protected function startInEditMode():Boolean {
 		//return isOffline || isExtensionDevMode;
-		return true;
+		return false;
 	}
 
 	public function getMediaLibrary(type:String, whenDone:Function):MediaLibrary {
@@ -663,6 +664,10 @@ public class Scratch extends Sprite {
 	protected var wasEditing:Boolean;
 
 	public function setPresentationMode(enterPresentation:Boolean):void {
+externalCall('JSsetPresentationMode', function (success:Boolean):void {
+                                if (!success) jsThrowError('Calling JSsetPresentationMode() failed.');
+                        }, enterPresentation);
+
 		if (enterPresentation) {
 			wasEditing = editMode;
 			if (wasEditing) {

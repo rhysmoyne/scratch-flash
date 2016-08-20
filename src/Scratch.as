@@ -664,9 +664,9 @@ public class Scratch extends Sprite {
 	protected var wasEditing:Boolean;
 
 	public function setPresentationMode(enterPresentation:Boolean):void {
-    externalCall('JSsetPresentationMode', function (success:Boolean):void {
-       if (!success) jsThrowError('Calling JSsetPresentationMode() failed.');
-    }, enterPresentation);
+    		externalCall('JSsetPresentationMode', function (success:Boolean):void {
+       			if (!success) jsThrowError('Calling JSsetPresentationMode() failed.');
+    		}, enterPresentation);
 
 		if (enterPresentation) {
 			wasEditing = editMode;

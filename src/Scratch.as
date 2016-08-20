@@ -92,7 +92,7 @@ public class Scratch extends Sprite {
 	public var isMicroworld:Boolean = false;
 
 	public var presentationScale:Number;
-	
+
 	// Runtime
 	public var runtime:ScratchRuntime;
 	public var interp:Interpreter;
@@ -241,10 +241,10 @@ public class Scratch extends Sprite {
 			addExternalCallback('ASloadBase64SBX', loadBase64SBX);
 			addExternalCallback('ASsetModalOverlay', setModalOverlay);
 		}
-		
+
 		addExternalCallback('ASloadProjectUrl', loadProjectUrl);
 	}
-	
+
 	public function loadProjectUrl(url:String){
 		function handleComplete(e:Event):void {
 			lp.setInfo("Opening project...")
@@ -259,7 +259,7 @@ public class Scratch extends Sprite {
 			removeLoadProgressBox();
 			ExternalInterface.call('JSloadProjectUrlCallback', e);
 		}
-		
+
 		function handleProgress(e:ProgressEvent) {
 			lp.setProgress(e.bytesLoaded / e.bytesTotal);
 			lp.setInfo("" + (Math.floor(e.bytesLoaded/100000)/10) + "MB / " + (Math.floor(e.bytesTotal/100000)/10) + "MB")
@@ -664,9 +664,9 @@ public class Scratch extends Sprite {
 	protected var wasEditing:Boolean;
 
 	public function setPresentationMode(enterPresentation:Boolean):void {
-externalCall('JSsetPresentationMode', function (success:Boolean):void {
-                                if (!success) jsThrowError('Calling JSsetPresentationMode() failed.');
-                        }, enterPresentation);
+    externalCall('JSsetPresentationMode', function (success:Boolean):void {
+       if (!success) jsThrowError('Calling JSsetPresentationMode() failed.');
+    }, enterPresentation);
 
 		if (enterPresentation) {
 			wasEditing = editMode;
@@ -926,15 +926,15 @@ externalCall('JSsetPresentationMode', function (success:Boolean):void {
 
 		updateLayout(w, h);
 	}
-	
+
 	public function updateRecordingTools(t:Number):void {
 		stagePart.updateRecordingTools(t);
 	}
-	
+
 	public function removeRecordingTools():void {
 		stagePart.removeRecordingTools();
 	}
-	
+
 	public function refreshStagePart():void {
 		stagePart.refresh();
 	}
@@ -1096,7 +1096,7 @@ externalCall('JSsetPresentationMode', function (success:Boolean):void {
 
 		m.showOnStage(stage, b.x, topBarPart.bottom() - 1);
 	}
-	
+
 	public function stopVideo(b:*):void {
 		runtime.stopVideo();
 	}
